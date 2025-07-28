@@ -28,8 +28,34 @@ console.log('Largest:', largest);         // Output: 9
 console.log('Second Largest:', secondLargest); // Output: 6
 ```
 
+## Better Solution ⚡
+
+- Find the largest element in one pass.
+- In another pass, find the largest element that is not equal to the largest (second largest).
+
+```javascript
+let largest = arr[0];
+let n = arr.length;
+
+for(let i = 1; i < n; i++){
+    if(arr[i] > largest) largest = arr[i];
+}
+
+let secondLargest = -1;
+
+for(let i = 0; i < n; i++){
+    if(arr[i] > secondLargest && arr[i] !== largest) secondLargest = arr[i];
+}
+
+console.log('Largest:', largest);
+console.log('Second Largest:', secondLargest);
+```
+
 ## Summary 🎉
 
 - Brute force uses sorting and extra passes.
   - Time Complexity: O(n log n)
+  - Space Complexity: O(1)
+- Better solution uses two passes.
+  - Time Complexity: O(n)
   - Space Complexity: O(1)
