@@ -28,10 +28,30 @@ var removeDuplicates = function(nums) {
 };
 ```
 
+## Optimal Solution ⚡
+
+- Use two pointers to overwrite duplicates in-place.
+- Traverse the array, and whenever a new unique element is found, move it to the next position.
+- Return the length of the unique portion.
+
+```javascript
+var removeDuplicates = function(nums) {
+    let j = 0; 
+    for(let i = 1; i < nums.length; i++){
+        if(nums[j] !== nums[i]) {
+            nums[j+1] = nums[i];
+            j++;
+        }
+    }
+    return j+1;
+};
+```
+
 ## Summary 🎉
 
 - Brute force uses extra space (Set), while the optimal solution works in-place.
-
+- The optimal approach is efficient and preferred for interviews.
+- Both methods return the new length of the array without duplicates.
 
 ## Time and Space Complexity ⏱️
 
@@ -39,3 +59,8 @@ var removeDuplicates = function(nums) {
   - Time Complexity: O(n)
   - Space Complexity: O(n)
 
+- Optimal Solution:
+  - Time Complexity: O(n)
+  - Space Complexity: O(1)
+  
+- Always prefer optimal approaches for better performance (O(n) time complexity and O(1) space complexity).
