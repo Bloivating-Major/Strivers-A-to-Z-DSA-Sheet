@@ -51,6 +51,50 @@ console.log('Largest:', largest);
 console.log('Second Largest:', secondLargest);
 ```
 
+## Optimal Solution 🏅
+
+- Find both the largest and second largest in a single pass.
+- Similarly, find the smallest and second smallest in a single pass.
+
+```javascript
+function sLargest(arr){
+    let n = arr.length;
+    let largest = arr[0];
+    let sLargest = -1;
+    for(let i = 1; i < n; i++){
+        if(arr[i] > largest){
+            sLargest = largest;
+            largest = arr[i];
+        }
+        else if(arr[i] > sLargest && arr[i] < largest){
+            sLargest = arr[i];
+        }
+    }
+    console.log('Largest is ', largest);
+    console.log('Second Largest is ', sLargest);
+}
+
+function sSmallest(arr){
+    let n = arr.length;
+    let smallest = arr[0];
+    let sSmallest = Infinity;
+    for(let i = 1; i < n; i++){
+        if(arr[i] < smallest){
+            sSmallest = smallest;
+            smallest = arr[i];
+        }
+        else if(arr[i] < sSmallest && arr[i] > smallest){
+            sSmallest = arr[i];
+        }
+    }
+    console.log('Smallest is ', smallest);
+    console.log('Second Smallest is ', sSmallest);
+}
+
+sLargest(arr);
+sSmallest(arr);
+```
+
 ## Summary 🎉
 
 - Brute force uses sorting and extra passes.
@@ -59,3 +103,7 @@ console.log('Second Largest:', secondLargest);
 - Better solution uses two passes.
   - Time Complexity: O(n)
   - Space Complexity: O(1)
+- Optimal solution finds second largest and smallest in a single pass.
+  - Time Complexity: O(n)
+  - Space Complexity: O(1)
+- Always prefer optimal approaches for better performance (O(n) time complexity).
