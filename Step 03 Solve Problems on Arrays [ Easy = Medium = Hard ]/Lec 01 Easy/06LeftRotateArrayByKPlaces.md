@@ -62,9 +62,40 @@ console.log(arr); // Output: [3, 4, 5, 1, 2]
 
 ---
 
+## Optimal Solution 🏅 (Using Reversal Algorithm)
 
+- Reverse the first K elements.
+- Reverse the remaining elements.
+- Reverse the entire array.
+
+```javascript
+let arr = [1, 2, 3, 4, 5], k = 2;
+let n = arr.length;
+k = k % n; // Handle cases where k > n
+
+function reverse(arr, s, e){
+    let i = s, j = e;
+    while(i < j){
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+        i++;
+        j--;
+    }
+}
+
+reverse(arr, 0, k-1);
+reverse(arr, k, n-1);
+reverse(arr, 0, n-1);
+
+console.log(arr); // Output: [3, 4, 5, 1, 2]
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+```
+
+---
 
 ## Summary 🎉
 
 - Brute force uses extra space and is less efficient.
 - Better approach rotates by 1, K times but is slower for large K.
+- Optimal solution uses reversal for efficient in-place rotation.
+- Always prefer the optimal approach for interviews and large datasets.
