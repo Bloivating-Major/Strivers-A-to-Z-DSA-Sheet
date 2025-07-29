@@ -39,8 +39,32 @@ console.log(arr); // Output: [3, 4, 5, 1, 2]
 
 ---
 
+## Better Approach ⚡
+
+- Rotate the array by 1, K times.
+
+```javascript
+let arr = [1, 2, 3, 4, 5], k = 2;
+let n = arr.length;
+
+for(let j = 0; j < k; j++){
+    let temp = arr[0];
+    for(let i = 1; i < n; i++){
+        arr[i-1] = arr[i];
+    }
+    arr[n-1] = temp;
+}
+
+console.log(arr); // Output: [3, 4, 5, 1, 2]
+// Time Complexity: O(k * n)
+// Space Complexity: O(1)
+```
+
+---
+
 
 
 ## Summary 🎉
 
 - Brute force uses extra space and is less efficient.
+- Better approach rotates by 1, K times but is slower for large K.
