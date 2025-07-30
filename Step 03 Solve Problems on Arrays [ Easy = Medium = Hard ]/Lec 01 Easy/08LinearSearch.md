@@ -36,3 +36,5 @@ return -1; // If not found
 - Time Complexity: O(n)
 - Space Complexity: O(1)
 - Useful for small datasets or when simplicity is preferred over efficiency.
+
+- Not suitable for large datasets due to its linear time complexity.
