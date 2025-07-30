@@ -78,3 +78,5 @@ console.log(nums); // Output: [1, 2, 3, 2, 0, 0, 0]
 - Brute force uses extra space and multiple passes.
 - Optimal solution uses two pointers for in-place rearrangement and is more efficient.
 - Both methods maintain the order of non-zero elements.
+
+- This is a fundamental array manipulation technique useful in various scenarios.
