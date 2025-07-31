@@ -64,3 +64,17 @@ printNto1(5);
 - Recursion is calling a function within itself.
 - Always define a base case to prevent infinite loops.
 - Printing N to 1 is a classic way to master recursion!
+
+```js
+let n = 5;
+
+function print(n){
+    if(n === 0) return;
+    console.log(n);
+    print(n-1);
+}
+
+print(n);
+```
+
+Revision Done.
