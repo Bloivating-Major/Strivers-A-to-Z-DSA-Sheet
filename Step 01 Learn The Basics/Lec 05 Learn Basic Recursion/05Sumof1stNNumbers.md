@@ -37,3 +37,24 @@ console.log(sumOfN(10)); // Output: 55 (1+2+...+10)
 - Recursion is calling a function within itself.
 - Always define a base case to prevent infinite loops.
 - Calculating the sum of first N numbers is a classic way to master recursion!
+
+```js
+// Recursion Sum of 1st N Numbers
+
+let n = 5;
+let sum = 0;
+
+function print(n, sum){
+    if(n === 0) return 0;
+    // sum all the numbers from 1 to n
+    
+    return (n + print(n-1));
+    
+}
+
+sum = print(n);
+
+console.log(sum);
+```
+
+revision done.
