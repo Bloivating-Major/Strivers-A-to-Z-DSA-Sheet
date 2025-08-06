@@ -60,3 +60,27 @@ console.log(emojis); // Output: ["🌟", "🚀", "🍕", "🐱", "😀"]
 - Recursion is a fun and elegant way to reverse arrays.
 - Always set a base case to avoid infinite recursion.
 - Try reversing arrays of numbers, strings, or even emojis to see how it works!
+
+```js
+// Recursion Reverse an Array
+
+let arr = [1,2,3,4,5];
+let start = 0;
+let end = arr.length-1;
+
+console.log(arr);
+
+function revArr(arr, start, end){
+    if(start > end) return;
+    
+    [arr[start], arr[end]] = [arr[end], arr[start]];
+    
+    revArr(arr, start+1, end-1);
+}
+
+revArr(arr, start, end);
+
+console.log(arr);
+```
+
+reverse array revision done.
