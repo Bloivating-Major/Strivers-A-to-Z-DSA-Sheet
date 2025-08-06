@@ -61,3 +61,22 @@ console.log(factorial(n)); // Output: 6
 - Recursion is a powerful way to compute factorials.
 - Always define a base case to avoid infinite loops.
 - Factorials are widely used in mathematics, probability, and computer science!
+
+```js
+// Recursion Factorial of a number.
+
+let n = 5;
+
+function fact(n){
+    // when we have to stop
+    if(n === 0) return 1;
+    // what we have to do recursively
+    return n * fact(n-1);
+}
+
+let ans = fact(n);
+
+console.log(ans);
+```
+
+Revision Done.
