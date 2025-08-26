@@ -54,3 +54,25 @@ console.log(isPalindrome("😀🐱🍕🐱😀")); // Output: true
 - Recursion is a neat way to check for palindromes.
 - Always set a base case to avoid infinite recursion.
 - Works for strings, phrases, and even emojis!
+
+```js
+// Revision Session 
+
+let s = "A man, a plan, a canal: Panama";
+
+s = s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+function check(s, left, right){
+    if(left >= right) return true;
+    
+    if(s[left] !== s[right]) return false;
+    
+    return check(s, left+1, right-1);
+}
+
+let ans = check(s, 0, s.length-1);
+
+console.log(ans);
+```
+
+Revision Done.
