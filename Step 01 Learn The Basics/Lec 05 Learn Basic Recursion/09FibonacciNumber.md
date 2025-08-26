@@ -52,3 +52,14 @@ console.log(fibonacci(7)); // Output: 13
 - Recursion is a simple way to generate Fibonacci numbers.
 - Always define base cases to avoid infinite recursion.
 - Fibonacci numbers are widely used in mathematics and computer science!
+
+```js
+function fibonacci(n){
+  if(n === 0) return 0;
+  if(n === 1) return 1;
+
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+
+console.log(fibonacci(5));
+```
