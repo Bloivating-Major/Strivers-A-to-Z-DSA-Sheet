@@ -17,8 +17,7 @@ Each topic/lecture folder contains:
 - ☑️ **Progress Checklist:** Track completion for each lecture.
 
 ## 🗂️ **Table of Contents**
-1. [Step 01: Learn The Basics](#step-01-learn-the-basics)
-
+1. [Step 01: Learn The Basics](./Step%2001%20Learn%20The%20Basics/Readme.md)
 ---
 
 ## 🛠️ **How to Use This Repository**
