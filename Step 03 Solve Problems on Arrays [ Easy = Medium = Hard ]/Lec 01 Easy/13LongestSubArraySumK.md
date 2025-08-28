@@ -34,7 +34,37 @@ console.log(length);
 
 ---
 
+## Better Solution ⚡ (Using Hash Map)
+
+- Use a map to store the prefix sum and its earliest index.
+- For each index, check if (current sum - K) exists in the map.
+- If yes, update the maximum length.
+
+```javascript
+let map = new Map();
+let sum = 0;
+let length = 0;
+map.set(0, -1); // Handle subarrays starting from index 0
+
+for(let i = 0; i < n; i++){
+    sum += arr[i];
+    if(map.has(sum - k)){
+        length = Math.max(length, i - map.get(sum - k));
+    }
+    if(!map.has(sum)){
+        map.set(sum, i);
+    }
+}
+console.log(length);
+```
+**Time Complexity:** O(n)  
+**Space Complexity:** O(n)
+
+---
+
+
 
 ## Summary 🎉
 
 - Brute force checks all subarrays (O(n²)), not efficient for large arrays.
+- Hash map approach works for all integers and is efficient (O(n) time, O(n) space).
