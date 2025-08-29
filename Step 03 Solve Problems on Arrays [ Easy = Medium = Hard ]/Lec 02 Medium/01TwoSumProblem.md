@@ -63,8 +63,39 @@ console.log(length);
 
 ---
 
+## Optimal Solution 🚀 (Sliding Window, for Positive Numbers Only)
+
+- Use two pointers (`left` and `right`) and a running sum.
+- Expand the window by moving `right` and add elements to the sum.
+- If the sum exceeds K, shrink the window from the left.
+- Update the maximum length when the sum equals K.
+
+```javascript
+let left = 0, right = 0, sum = arr[0], length = 0;
+
+while(right < arr.length){
+    while(left <= right && sum > K){
+        sum -= arr[left];
+        left++;
+    }
+    if(sum === K){
+        length = Math.max(length, right - left + 1);
+    }
+    right++;
+    if(right < arr.length){
+        sum += arr[right];
+    }
+}
+console.log(length);
+```
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
+
+---
 
 ## Summary 🎉
 
 - Brute force checks all subarrays (O(n²)), not efficient for large arrays.
 - Hash map approach works for all integers and is efficient (O(n) time, O(n) space).
+- Sliding window is optimal for positive numbers (O(n) time, O(1) space).
+- Always choose the optimal approach for interviews and large datasets!
