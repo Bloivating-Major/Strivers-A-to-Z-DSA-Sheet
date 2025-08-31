@@ -39,8 +39,42 @@ for(let i = temp.length; i < n; i++){
 console.log("After:", nums); // Output: [1, 2, 3, 2, 0, 0, 0]
 ```
 
+---
 
+## Optimal Solution ⚡ (Two Pointer Approach)
+
+- Find the first zero in the array.
+- Use two pointers: one for the zero position (`j`), and one to scan ahead (`i`).
+- Whenever a non-zero is found, swap it with the zero at position `j` and move `j` forward.
+
+```javascript
+let nums = [1, 0 , 2, 3, 2, 0, 0];
+
+let j = -1;
+
+for(let i = 0; i < nums.length; i++){
+    if(nums[i] === 0){
+        j = i;
+        break;
+    }
+}
+
+if(j === -1) console.log('All numbers are non-zero');
+
+for(let i = j + 1; i < nums.length; i++){
+    if(nums[i] !== 0){
+        [nums[j], nums[i]] = [nums[i], nums[j]];
+        j++;
+    }
+}
+
+console.log(nums); // Output: [1, 2, 3, 2, 0, 0, 0]
+```
+
+---
 
 ## Summary 🎉
 
 - Brute force uses extra space and multiple passes.
+- Optimal solution uses two pointers for in-place rearrangement and is more efficient.
+- Both methods maintain the order of non-zero elements.
