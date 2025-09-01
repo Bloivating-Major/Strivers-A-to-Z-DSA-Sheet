@@ -37,8 +37,39 @@ for(let i = 1; i <= n; i++){
 
 ---
 
+## Better Solution ⚡
 
+- Use a Map to mark the presence of each number.
+- Traverse the array and update the map.
+- The number not marked is the missing one.
+
+```javascript
+let arr = [1,2,4,5];
+let n = 5;
+let map = new Map();
+
+for(let i = 1; i <= n; i++){
+    map.set(i, 0);
+}
+
+for(let i = 0; i < arr.length; i++){
+    if(map.has(arr[i])){
+        map.set(arr[i], 1);
+    }
+}
+
+for(let i = 1; i <= n; i++){
+    if(map.get(i) === 0){
+        console.log("Missing number is", i); // Output: 3
+    }
+}
+```
+**Time Complexity:** O(n)  
+**Space Complexity:** O(n)
+
+---
 
 ## Summary 🎉
 
 - Brute force checks each number, but is slow for large arrays.
+- Map-based solution is faster but uses extra space.
