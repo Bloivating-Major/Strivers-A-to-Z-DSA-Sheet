@@ -69,7 +69,32 @@ for(let i = 1; i <= n; i++){
 
 ---
 
+## Optimal Solution 🏅 (Using Summation)
+
+- The sum of numbers from 1 to N is `(N * (N + 1)) / 2`.
+- Subtract the sum of array elements from this total to get the missing number.
+
+```javascript
+let arr = [1,2,4,5];
+let n = 5;
+
+let sum = (n * (n + 1)) / 2;
+let sum2 = 0;
+
+for(let i = 0; i < arr.length; i++){
+    sum2 += arr[i];
+}
+
+console.log("Missing number is", sum - sum2); // Output: 3
+```
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
+
+--- 
+
 ## Summary 🎉
 
 - Brute force checks each number, but is slow for large arrays.
 - Map-based solution is faster but uses extra space.
+- Summation method is optimal: O(n) time and O(1) space.
+- Always prefer the optimal approach for interviews and large datasets.
