@@ -29,8 +29,34 @@ for(let i = 0; i < nums.length; i++){
 
 ---
 
+## Better Approach ⚡
 
+- Use a Map to count the frequency of each element.
+- Return the element with a count of 1.
+
+```javascript
+let map = new Map();
+
+for (let num of nums) {
+    map.set(num, (map.get(num) || 0) + 1);
+}
+
+let single = -1;
+for (let [key, val] of map) {
+    if (val === 1) {
+        single = key;
+        break;
+    }
+}
+
+return single;
+```
+**Time Complexity:** O(n)  
+**Space Complexity:** O(n)
+
+---
 
 ## Summary 🎉
 
 - Brute force checks each element's frequency, but is slow.
+- Map-based solution is faster but uses extra space.
