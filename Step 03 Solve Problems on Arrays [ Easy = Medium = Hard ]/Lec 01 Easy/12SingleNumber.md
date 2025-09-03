@@ -56,7 +56,27 @@ return single;
 
 ---
 
+## Optimal Solution 🏅 (Using XOR)
+
+- XOR all elements together. Pairs cancel out, leaving the single number.
+
+```javascript
+let single = 0;
+
+for(let num of nums){
+    single ^= num;
+}
+
+return single;
+```
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
+
+---
+
 ## Summary 🎉
 
 - Brute force checks each element's frequency, but is slow.
 - Map-based solution is faster but uses extra space.
+- XOR method is optimal: O(n) time and O(1) space.
+- Always prefer the optimal approach for interviews and large datasets.
